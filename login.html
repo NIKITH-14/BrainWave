@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AGENT LOGIN // SECURE ACCESS</title>
+    <link href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="premium-body" id="login-body">
+    
+    <div class="background-effects">
+        <div class="scanline"></div>
+        <div class="grid"></div>
+    </div>
+
+    <div class="login-container">
+        <div class="header">
+            <h1 class="glow-text">SKYWATCH</h1>
+            <p class="subtitle">AUTHORIZATION REQUIRED</p>
+        </div>
+
+        <div class="status-panel">
+            <h3>HARDWARE VERIFICATION</h3>
+            <ul class="status-list">
+                <li id="status-step-1" class="status-item pending">
+                    <span class="icon">[ ]</span>
+                    <span class="text">STEP 1: Raspberry Pi 1 - Face Detection</span>
+                    <span class="indicator">AWAITING...</span>
+                </li>
+                <li id="status-step-2" class="status-item pending">
+                    <span class="icon">[ ]</span>
+                    <span class="text">STEP 2: Raspberry Pi 2 - LCD PIN Entry</span>
+                    <span class="indicator">AWAITING...</span>
+                </li>
+                <li id="status-step-3" class="status-item pending">
+                    <span class="icon">[ ]</span>
+                    <span class="text">STEP 3: Local Node - Password Authentication</span>
+                    <span class="indicator">LOCKED</span>
+                </li>
+            </ul>
+        </div>
+
+        <form id="login-form" class="locked-form">
+            <div class="input-group">
+                <label for="agent-id">AGENT ID</label>
+                <input type="text" id="agent-id" value="AGENT-OMNIPRESENT" disabled>
+            </div>
+            
+            <div class="input-group">
+                <label for="password">ACCESS CODE</label>
+                <!-- Disabled by default until Step 1 and 2 pass -->
+                <input type="password" id="password" required disabled placeholder="ENTER PASSWORD">
+            </div>
+
+            <button type="submit" id="auth-button" disabled>AUTHENTICATE</button>
+        </form>
+    </div>
+
+    <!-- Security Overlay to ensure Fullscreen is maintained -->
+    <div id="fullscreen-warning" class="hidden">
+        <h2>SECURITY BREACH DETECTED</h2>
+        <p>FULL SCREEN MODE EXITED. TERMINATING SESSION.</p>
+        <button onclick="requestFullScreenAgain()">RE-ENGAGE SECURE MODE</button>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
